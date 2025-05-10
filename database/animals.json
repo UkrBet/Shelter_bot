@@ -1,0 +1,43 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Мурчик",
+      "type": "Кіт",
+      "gender": "Чоловіча",
+      "age": "2 роки",
+      "size": "Середній",
+      "vaccinated": true,
+      "sterilized": true,
+      "photo": "https://placekitten.com/200/200",
+      "story": "Знайдений на вулиці...",
+      "character": "Лагідний та спокійний"
+    },
+    {
+      "id": 2,
+      "name": "Лайка",
+      "type": "Собака",
+      "gender": "Жіноча",
+      "age": "1 рік",
+      "size": "Великий",
+      "vaccinated": false,
+      "sterilized": false,
+      "photo": "https://placedog.com/200/200",
+      "story": "Привезена з іншого притулку...",
+      "character": "Активна та грайлива"
+    },
+    {
+      "id": 3,
+      "name": "Пушок",
+      "type": "Кіт",
+      "gender": "Чоловіча",
+      "age": "5 місяців",
+      "size": "Маленький",
+      "vaccinated": true,
+      "sterilized": false,
+      "photo": "https://placekitten.com/201/201",
+      "story": "Підкинули до дверей притулку...",
+      "character": "Ніжний та сором'язливий"
+    }
+  ]
+}

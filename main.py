@@ -1,16 +1,32 @@
-# This is a sample Python script.
+import asyncio
+import logging
+from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from config.config import TELEGRAM_TOKEN_BOT
+from handlers import adopt, browse, feedback, meet, start, support, base_handler
+
+# Налаштування логування
+logging.basicConfig(level=logging.INFO)
+
+# Ініціалізація бота
+bot = Bot(token=TELEGRAM_TOKEN_BOT)
+
+# Ініціалізація диспетчера (нова архітектура aiogram 3)
+dp = Dispatcher()
+
+# Підключення роутерів
+dp.include_router(start.router)
+dp.include_router(browse.router)
+dp.include_router(adopt.router)
+dp.include_router(meet.router)
+dp.include_router(feedback.router)
+dp.include_router(support.router)
+dp.include_router(base_handler.router)  # Підключаємо роутер з base_handler
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+async def main():
+    await dp.start_polling(bot)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    asyncio.run(main())
